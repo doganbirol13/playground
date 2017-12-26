@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello world</title>
+        <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap-grid.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/stylejll.css" />
+        <script src="javascripts/kaleidoscope.min.js"></script>
+		  <script src="javascripts/jquery.js"></script>
+    </head>
+    <body>
+        <header>
+                <nav class="navbar navbar-default">
+                        <div class="container-fluid">
+                        <div class="navbar-header">
+                        <a class="navbar-brand" href="#"><img src="images/logo.png" alt="logo"></a>
+                        </div>
+                   <!--     <ul class="nav navbar-nav">
+                          <li class="active"><a href="#">Home</a></li>
+                            <li><a href="#">Videos</a></li>
+                        </ul> -->
+                        </div>
+                </nav>
+        </header>
+    <br><br><br><br><br><br><br>
+    <div class="container">
+        <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <div class="row"><h3> Video 1 </h3></div>
+                    <div class="row" id="video1row">
+                        <style>
+                                html,body, center {
+                                  height: 100%;
+                                }
+                            
+                                body, html {
+                                 margin: 0 auto;
+                                }
+                            
+                                #wrapper {
+                                    position: relative;
+                                    width: 60%;
+                                    height: 50%;
+                                    background: black;
+                                }
+                                button {
+                                    height: 7%;
+                                    width: 60%;
+                                    margin-top: 30px;
+                                    font-size: 2em;
+                                }
+                            
+                                @media (max-width: 1000px) {
+                                    #wrapper {
+                                        width: 100%;
+                                    }
+                                }
+                            </style>
+                            <!--        <div id="wrapper"></div> -->
+                            <div id="target">
+                            
+                                <script type="text/javascript" charset="utf-8">
+                                  target.viewer = new Kaleidoscope.Video({autoplay: false, muted: false, height: 270, width: 480, source: 'images/test.mp4', containerId: '#target'});
+                                  target.viewer.render();
+                              //    var count=false;
+                              //   document.getElementById("target").addEventListener('click', function() {
+                               //         if(count==false){
+                               //             target.viewer.play();
+                               //             count=true;
+                               //         }
+                               //         else{
+                               //             target.viewer.pause();
+                               //             count=false;
+                               //         }
+                               //   });                     
+                                </script>
+								</div>
+                    </div>
+                  <!---  <div class="row" style="padding-top:10px;">
+                            <div id="ctl00_ctl48_g_9c0947c1_2dca_413c_99f4_74e0370c4d3c_ctl00_rptBlocks_ctl04_JLLBlockButtonUnderWrap" class="col-xs-6 col-sm-5 col-sm-push-1 col-md-5 col-lg-4  "><p class="jll-btn-container"><a href="/turkey/tr-tr/kariyer" title="daha fazla bilgi" class="btn btn-jll-black btn-jll-outline">Play</a></p></div> -->
+                    <div class="row">
+							<div class="col-md-6 col-xs-12">
+						<p><button type="button" class="btn-jll-red" id="play1"><h5>Play</h5>
+								<script type="text/javascript" charset="utf-8">
+									$("#play1").click(function(){
+									target.viewer.play();
+									});
+								</script>
+							</button></p>
+							
+							</div>
+							<div class="col-md-6 col-xs-12">
+						<p><button type="button" class="btn-jll-black" id="pause1"><h5>Pause</h5>
+						<script type="text/javascript" charset="utf-8">
+							$("#pause1").click(function(){
+								target.viewer.pause();
+								});
+							</script>
+						</button></p>
+							</div>
+						</div>       
+        
+                    </div>       
+                    <div class="col-md-6 col-xs-12" align="right" valign="center"><h3 valign="center">Building Name 1</h3><br><br><p style="text-align:right;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius laoreet faucibus. Vestibulum iaculis diam nunc, in suscipit enim finibus non. Sed eu quam nisi. </p></div>
+       
+        </div>           
+    
+        <br><br><br>     
+        <div class="row">
+            
+                <div class="col-md-6 col-xs-12">
+					<div class="row">
+                        <h3> Video 2 </h3>
+						</div>
+						<div class="row" id="video2row">
+						 <style>
+                                html,body, center {
+                                  height: 100%;
+                                }
+                            
+                                body, html {
+                                 margin: 0 auto;
+                                }
+                            
+                                #wrapper {
+                                    position: relative;
+                                    width: 60%;
+                                    height: 50%;
+                                    background: black;
+                                }
+                                button {
+                                    height: 7%;
+                                    width: 60%;
+                                    margin-top: 30px;
+                                    font-size: 2em;
+                                }
+                            
+                                @media (max-width: 1000px) {
+                                    #wrapper {
+                                        width: 100%;
+                                    }
+                                }
+                            </style>
+                            <!--        <div id="wrapper"></div> -->
+                            <div id="target2">
+                            
+                            <script type="text/javascript" charset="utf-8">
+                                  target2.viewer = new Kaleidoscope.Video({autoplay: false, muted: false, height: 270, width: 480, source: 'images/test2.mp4', containerId: '#target2'});
+                                  target2.viewer.render();
+                              //    var count2=false;
+                              //    document.gelElementById("target2").addEventListener('click', function() {
+                              //          if(count2==false){
+                               //             target2.viewer.play();
+                               //             count2=true;
+                                 //       }
+                                //        else{
+                                //            target2.viewer.pause();
+                                //            count2=false;
+                                //        }
+                                //  });                           
+                                </script>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6 col-xs-12">
+						<p><button type="button" class="btn-jll-red" id="play2">
+							<h5>Play</h5>
+							<script type="text/javascript" charset="utf-8">
+							$("#play2").click(function(){
+								target2.viewer.play();
+								});
+							</script>
+							</button></p>
+							</div>
+							<div class="col-md-6 col-xs-12">
+						<p><button type="button" class="btn-jll-black" id="pause2"><h5>Pause</h5>
+						<script type="text/javascript" charset="utf-8">
+							$("#pause2").click(function(){
+								target2.viewer.pause();
+								});
+							</script>
+						</button></p>
+							</div>
+						</div>
+                    </div>
+                    <div class="col-md-6 col-xs-12" align="right" valign="center"><h3 valign="center">Building Name 2</h3><br><br><p style="text-align:right;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius laoreet faucibus. Vestibulum iaculis diam nunc, in suscipit enim finibus non. Sed eu quam nisi. </p></div>
+                </div>        
+	
+        <br><br><br>     
+	    <div class="row">
+            
+                <div class="col-md-6 col-xs-12">
+					<div class="row">
+                        <h3> Video 3 </h3>
+						</div>
+						<div class="row" id="video3row">
+						 <style>
+                                html,body, center {
+                                  height: 100%;
+                                }
+                            
+                                body, html {
+                                 margin: 0 auto;
+                                }
+                            
+                                #wrapper {
+                                    position: relative;
+                                    width: 60%;
+                                    height: 50%;
+                                    background: black;
+                                }
+                                button {
+                                    height: 7%;
+                                    width: 60%;
+                                    margin-top: 30px;
+                                    font-size: 2em;
+                                }
+                            
+                                @media (max-width: 1000px) {
+                                    #wrapper {
+                                        width: 100%;
+                                    }
+                                }
+                            </style>
+                            <!--        <div id="wrapper"></div> -->
+                            <div id="target3">
+                            
+                            <script type="text/javascript" charset="utf-8">
+                                  target3.viewer = new Kaleidoscope.Video({autoplay: false, muted: false, height: 270, width: 480, source: 'images/test3.mp4', containerId: '#target3'});
+                                  target3.viewer.render();
+                             //     var count3=false;
+                             //     document.gelElementById("target3").addEventListener('click', function() {
+                              //          if(count3==false){
+                              //              target3.viewer.play();
+                               //             count3=true;
+                               //         }
+                              //          else{
+                              //              target3.viewer.pause();
+                              //              count3=false;
+                              //          }
+                              //    });                           
+                                </script>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6 col-xs-12">
+						<p><button type="button" class="btn-jll-red" id="play3">
+							<h5>Play</h5>
+							<script type="text/javascript" charset="utf-8">
+							$("#play3").click(function(){
+								target3.viewer.play();
+								});
+							</script>
+							</button></p>
+							</div>
+							<div class="col-md-6 col-xs-12">
+						<p><button type="button" class="btn-jll-black" id="pause3"><h5>Pause</h5>
+						<script type="text/javascript" charset="utf-8">
+							$("#pause3").click(function(){
+								target3.viewer.pause();
+								});
+							</script>
+						</button></p>
+							</div>
+						</div>
+                    </div>
+                    <div class="col-md-6 col-xs-12" align="right" valign="center"><h3 valign="center">Building Name 3</h3><br><br><p style="text-align:right;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius laoreet faucibus. Vestibulum iaculis diam nunc, in suscipit enim finibus non. Sed eu quam nisi. </p></div>
+					</div>
+                </div>        
+    </body>
+</html>
