@@ -1,7 +1,7 @@
 {
   "name": "jllturvidtest",
   "version": "0.0.0",
-  "description": "",
+  "description": "xyz",
   "keywords": [
     "express"
   ],
@@ -12,7 +12,7 @@
   },
   "engines": { "node": "9.3.0"},
   "license": "This work is intellectual property of the company JLL Turkey, subsidiary of JLL Inc. Could not be copied, distributed without the permission of management board of JLL Turkey.",
-  "homepage": "https://github.com/passport/express-4.x-local-example",
+  "homepage": "https://jll.com.tr",
   "dependencies": {
     "body-parser": "^1.13.3",
     "connect-ensure-login": "^0.1.1",

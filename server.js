@@ -114,5 +114,8 @@ app.get("/index2", permit("first"), function(req, res){res.render('index2', { us
 
 //Define the second role based routing for another page
 
+var port = process.env.PORT || 8080;
 
-app.listen(3000);
+app.listen(port, function() {
+    console.log('Our app is running on http://localhost:' + port);
+});
