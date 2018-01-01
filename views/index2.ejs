@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>360</title>
+        <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap-grid.css" />
+        <link rel="stylesheet" type="text/css" href="stylesheets/stylejll.css" />
+        <script src="javascripts/kaleidoscope.min.js"></script>
+		  <script src="javascripts/jquery.js"></script>
+    </head>
+
+    <style>
+            body  {
+                background-color: #dbd6c7;
+            }
+            h3 {
+                color:#e30613;
+            }
+            .custom-style {
+                width: 1000px;
+                background-color: #cfd0d1;
+            }
+            .vid-row-style {
+                background-color: #f4f2ee;
+                border-style: solid;
+                border-width: 1px;
+                border-color: #e8e5dd
+            }
+            .custom2-style {
+                width: 1800px;
+                background-color: #ffffff;
+            }
+            </style>
+
+    <body>
+        <header>
+                <nav class="navbar navbar-default">
+                        <div class="container-fluid">
+                        <div class="navbar-header">
+                        <a class="navbar-brand" href="#"><img src="images/logo.png" alt="logo"></a>
+                        </div>
+                   <!--     <ul class="nav navbar-nav">
+                          <li class="active"><a href="#">Home</a></li>
+                            <li><a href="#">Videos</a></li>
+                        </ul> -->
+                        </div>
+                </nav>
+        </header>
+        <br><br>
+        <style>
+                .jll-header  {
+                    background-image: url("images/bg.png");
+                    background-color: #cccccc;
+                }
+                </style>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1 col-xs-12" align="left"></div>
+                <div class="col-md-10 col-xs-12" align="center">
+            <div class="jll-header">
+            <br><br>   
+            <h2 style="color:#e30613;font-weight:bold;padding-left:10px;" align="left">360 Degrees of Estate</h2>
+            <p style="color:#ffffff;padding-left:10px;" align="left"><i>We are aware that the details matter. They shape the decisions.</i></p>
+            <p style="color:#ffffff;padding-left:10px;" align="left"><i>This is the reason we are on the mission of designing remarkable experiences.</i></p>
+            <br>
+            </div>
+            </div>
+            <div class="col-md-1 col-xs-12" align="right"></div>
+            </div>
+            </div>
+
+
+        </div>
+    <br><br><br>
+    <div class="container custom2-style">
+    <div class="container custom-style">
+            <br><br><br>     
+        <div class="row vid-row-style" style="padding:10px;">
+                <div class="col-md-10 col-xs-12">
+                    <div class="row" id="video1row">
+                        <style>
+                                html,body, center {
+                                  height: 100%;
+                                }
+                            
+                                body, html {
+                                 margin: 0 auto;
+                                }
+                            
+                                #wrapper {
+                                    position: relative;
+                                    width: 60%;
+                                    height: 50%;
+                                    background: black;
+                                }
+                                button {
+                                    height: 7%;
+                                    width: 60%;
+                                    margin-top: 30px;
+                                    font-size: 2em;
+                                }
+                            
+                                @media (max-width: 1000px) {
+                                    #wrapper {
+                                        width: 100%;
+                                    }
+                                }
+                            </style>
+                            <!--        <div id="wrapper"></div> -->
+                            <div id="target">
+                            
+                                <script type="text/javascript" charset="utf-8">
+                                  target.viewer = new Kaleidoscope.Video({autoplay: false, muted: false, height: 360, width: 640, source: 'images/testjll.mp4', containerId: '#target'});
+                                  target.viewer.render();
+                              //    var count=false;
+                              //   document.getElementById("target").addEventListener('click', function() {
+                               //         if(count==false){
+                               //             target.viewer.play();
+                               //             count=true;
+                               //         }
+                               //         else{
+                               //             target.viewer.pause();
+                               //             count=false;
+                               //         }
+                               //   });                     
+                                </script>
+								</div>
+                    </div>
+                  <!---  <div class="row" style="padding-top:10px;">
+                            <div id="ctl00_ctl48_g_9c0947c1_2dca_413c_99f4_74e0370c4d3c_ctl00_rptBlocks_ctl04_JLLBlockButtonUnderWrap" class="col-xs-6 col-sm-5 col-sm-push-1 col-md-5 col-lg-4  "><p class="jll-btn-container"><a href="/turkey/tr-tr/kariyer" title="daha fazla bilgi" class="btn btn-jll-black btn-jll-outline">Play</a></p></div> -->
+                    <div class="row">
+							<div class="col-md-6 col-xs-6">
+						<p><button type="button" class="btn-jll-red" id="play1"><h5>Play</h5>
+								<script type="text/javascript" charset="utf-8">
+									$("#play1").click(function(){
+									target.viewer.play();
+									});
+								</script>
+							</button></p>
+							
+							</div>
+							<div class="col-md-6 col-xs-6">
+						<p><button type="button" class="btn-jll-black" id="pause1"><h5>Pause</h5>
+						<script type="text/javascript" charset="utf-8">
+							$("#pause1").click(function(){
+								target.viewer.pause();
+								});
+							</script>
+						</button></p>
+							</div>
+						</div>       
+        
+                    </div>       
+                    <div class="col-md-2 col-xs-12" align="right" valign="center"><h3 valign="center">Building Name 1</h3><br><br><p style="text-align:right;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius laoreet faucibus. Vestibulum iaculis diam nunc, in suscipit enim finibus non. Sed eu quam nisi. </p></div>
+       
+        </div>           
+    
+        <br><br><br>     
+                </div> 
+                </div>  
+    </body>
+</html>

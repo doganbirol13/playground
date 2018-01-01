@@ -1,81 +1,118 @@
 var express = require('express');
+var passport = require('passport');
+var Strategy = require('passport-local').Strategy;
+var db = require('./db');
+var permit = require("./permissions");
+
+// Configure the local strategy for use by Passport.
+//
+// The local strategy require a `verify` function which receives the credentials
+// (`username` and `password`) submitted by the user.  The function must verify
+// that the password is correct and then invoke `cb` with a user object, which
+// will be set at `req.user` in route handlers after authentication.
+passport.use(new Strategy(
+  function(username, password, cb) {
+    db.users.findByUsername(username, function(err, user) {
+      if (err) { return cb(err); }
+      if (!user) { return cb(null, false); }
+      if (user.password != password) { return cb(null, false); }
+      return cb(null, user);
+    });
+  }));
+
+
+// Configure Passport authenticated session persistence.
+//
+// In order to restore authentication state across HTTP requests, Passport needs
+// to serialize users into and deserialize users out of the session.  The
+// typical implementation of this is as simple as supplying the user ID when
+// serializing, and querying the user record by ID from the database when
+// deserializing.
+passport.serializeUser(function(user, cb) {
+  cb(null, user.id);
+});
+
+passport.deserializeUser(function(id, cb) {
+  db.users.findById(id, function (err, user) {
+    if (err) { return cb(err); }
+    cb(null, user);
+  });
+});
+
+
+
+
+// Create a new Express application.
 var app = express();
 
-// set the port of our application
-// process.env.PORT lets the port be set by Heroku
-var port = process.env.PORT || 8080;
-
-// set the view engine to ejs
-app.set('view engine', 'ejs');
-
-// make express look in the public directory for assets (css/js/img)
+//Define static sources
 app.use(express.static(__dirname + '/public'));
 
-// set the home page route
-app.get('/', function(req, res) {
+// Configure view engine to render EJS templates.
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
 
-    // ejs render automatically looks in the views folder
-    res.render('index');
-});
+// Use application-level middleware for common functionality, including
+// logging, parsing, and session handling.
+app.use(require('morgan')('combined'));
+app.use(require('cookie-parser')());
+app.use(require('body-parser').urlencoded({ extended: true }));
+app.use(require('express-session')({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
 
-app.listen(port, function() {
-    console.log('Our app is running on http://localhost:' + port);
-});
+// Initialize Passport and restore authentication state, if any, from the
+// session.
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Define routes.
+// app.get('/',
+//   function(req, res) {
+//     res.render('home', { user: req.user });
+//   });
+
+app.get('/',
+  function(req, res){
+    res.render('login');
+  });
+
+app.get('/login',
+  function(req, res){
+    res.render('login');
+  });
+  
+app.post('/login', 
+  passport.authenticate('local', { session: 'true', failureRedirect: '/' }),
+  function(req, res) {
+    if(req.user.username == 'jll'){
+    res.redirect('/index');
+    }
+    else{
+      res.redirect('/index2');
+    }
+  });
+  
+app.get('/logout',
+  function(req, res){
+    req.logout();
+    res.redirect('/');
+  });
+
+//Role based routing, it worked, the commented below lines are backups
+
+
+app.get("/index", permit("default"), function(req, res){res.render('index', { user: req.user });});              //(req, res) => req.json({currentUser: request.user}))
+app.get("/index2", permit("first"), function(req, res){res.render('index2', { user: req.user });});
 
 
 
+//app.use("/views/perm", permit("default"));
+// app.get('/index',
+//   require('connect-ensure-login').ensureLoggedIn(),
+//   function(req, res){
+//     res.render('index', { user: req.user });
+//   });
+
+//Define the second role based routing for another page
 
 
-
-
-
-
-
-
-/* var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-
-var index = require('./routes/index');
-var users = require('./routes/users');
-
-var app = express();
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
-
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', index);
-app.use('/users', users);
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
-
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
-
-module.exports = app;
- */
+app.listen(3000);
